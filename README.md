@@ -1,48 +1,25 @@
-# 📸 Caption The Image API
+# Image Caption Generator API
 
-A simple API that generates captions for images using a pretrained VisionEncoderDecoderModel (ViT-GPT2) from Hugging Face, built with FastAPI.
+## Overview
+The Image Caption Generator API is a high-performance tool developed to generate descriptive captions for input images using cutting-edge machine learning techniques.
 
----
+## Features
+- **Efficient Caption Generation:** Utilizes Hugging Face Transformers and a VisionEncoderDecoderModel to provide accurate and descriptive captions.
+- **FastAPI Integration:** Built with FastAPI for high-throughput and low-latency API endpoints.
+- **Dockerized Deployment:** Containerized with Docker for seamless deployment and scalability across different environments.
+- **Performance Optimization:** Optimized for speed by loading and initializing the model once for reduced latency.
 
-## 🚀 Features
+## Technical Stack
+- **Hugging Face Transformers:** Integrates the VisionEncoderDecoderModel for image captioning.
+- **FastAPI:** Modern Python web framework for building APIs with asynchronous capabilities.
+- **Docker:** Containerization for easy deployment and environment consistency.
+- **PyTorch:** Framework used for implementing machine learning models.
 
-- Upload an image and get a caption generated.
-- Powered by `transformers`, `FastAPI`, and `Docker` for easy deployment.
-- Supports GPU acceleration with CUDA.
+## Usage
 
----
+### Build the Docker image:
+docker build -t image-caption-api .
 
-## 🛠️ Tech Stack
 
-- Python
-- FastAPI
-- Hugging Face Transformers
-- ViT-GPT2 (nlpconnect/vit-gpt2-image-captioning)
-- Docker (optional for deployment)
-
----
-
-## 🔧 Setup Instructions
-
-### 1️⃣ Clone the repository
-
-```bash
-git clone https://github.com/yourusername/caption-the-image-api.git
-cd caption-the-image-api
-```
-2️⃣ Install dependencies
-pip install -r requirements.txt
-
-3️⃣ Run the FastAPI server
-uvicorn app.main:app --reload
-
-4️⃣ Access API Docs
-Go to: http://localhost:8000/docs
-You can test the API directly from here.
-
-🐳 Docker Deployment (optional)
-Build Docker Image:
-docker build -t caption-the-image-api .
-
-Run Docker Container:
-docker run -p 8000:8000 caption-the-image-api
+### Run the Docker container:
+docker run -p 8000:8000 image-caption-api
